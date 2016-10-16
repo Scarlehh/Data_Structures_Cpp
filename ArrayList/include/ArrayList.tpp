@@ -38,12 +38,12 @@ const bool ArrayList<T>::add(const int index, const T element) {
 	}
 	len++;
 	T* newArray = new T[len];
-	for(int i = 0, j = 0; i < len-1; i++, j++) {
-		newArray[i] = array[j];
-		if(i+1 == index) {
-			newArray[i+1] = element;
+	for(int i = 0, j = 0; j < len; i++, j++) {
+		if(i == index) {
+			newArray[i] = element;
 			i++;
 		}
+		newArray[i] = array[j];
 	}
 	delete[] array;
 	array = newArray;
