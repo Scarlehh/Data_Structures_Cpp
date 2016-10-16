@@ -22,7 +22,7 @@ _OBJ=\
 OBJ = $(patsubst %,$(BUILD)%,$(_OBJ))
 
 _CXX=\
-	MyTestSuite.cpp
+	TestArrayList.cpp
 CXX = $(patsubst %,$(BUILD)%,$(_CXX))
 
 MAIN = main
@@ -35,7 +35,7 @@ $(BUILD)%.o: $(SRC)%.cpp
 	$(CC) -c $< -o $@ $(CFLAGS)
 
 $(MAIN_TEST): $(CXX)
-	$(CC) $^ -o $(addprefix $(BIN),$@)
+	$(CC) $^ -o $(addprefix $(BIN),$@) $(CFLAGS)
 
 $(BUILD)%.cpp: $(TEST)%.h
 	$(TESTCC) $(TESTFLAGS) $< -o $@
