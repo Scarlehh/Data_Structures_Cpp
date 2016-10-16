@@ -24,6 +24,7 @@ class ArrayList {
 		const bool removeAll(const T element);
 
 		inline T& get(const int index) { return array[index]; }
+		inline const T* getCollection() { return array; }
 		inline const bool isEmpty() { if(len == 0) return true; return false; };
 		inline const int size() { return len; };
 
